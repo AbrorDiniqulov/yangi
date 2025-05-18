@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبار الاستماع</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      height: 100vh;
+      direction: rtl;
+    }
+
+    .left, .right {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .left {
+      width: 50%;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right {
+      width: 50%;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .controls button {
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #questions {
+      flex: 1;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: 16px;
+      transition: font-size 0.2s;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .correct {
+      background-color: #d4edda;
+    }
+
+    .incorrect {
+      background-color: #f8d7da;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left">
+    <audio controls>
+      <source src="https://abrordiniqulov.github.io/audio-test/audio.mp3" type="audio/mpeg">
+      متصفحك لا يدعم مشغل الصوت.
+    </audio>
+  </div>
+
+  <div class="right">
+    <div class="controls">
+      <button onclick="zoomIn()">A+</button>
+      <button onclick="zoomOut()">A−</button>
+    </div>
+    <div id="questions">
+      <div class="question" data-correct="q1b">
+        <strong>1. بِمَ يبدأ المتحدث كلامه؟</strong><br>
+        <label><input type="radio" name="q1" id="q1a"> أ) بتعريف اللغة العربية</label><br>
+        <label><input type="radio" name="q1" id="q1b"> ب) بسؤال عن أهمية تعلم اللغة العربية</label><br>
+        <label><input type="radio" name="q1" id="q1c"> ج) بتحية وسلام</label>
+      </div>
+
+      <div class="question" data-correct="q2b">
+        <strong>2. لماذا تُعتبر اللغة العربية مهمة حسب المتحدث؟</strong><br>
+        <label><input type="radio" name="q2" id="q2a"> أ) لأنها لغة سهلة وسريعة التعلم</label><br>
+        <label><input type="radio" name="q2" id="q2b"> ب) لأنها لغة القرآن والعبادة</label><br>
+        <label><input type="radio" name="q2" id="q2c"> ج) لأنها لغة حديثة وعصرية</label>
+      </div>
+
+      <div class="question" data-correct="q3b">
+        <strong>3. كيف يُشبه المتحدث تعلم اللغة العربية؟</strong><br>
+        <label><input type="radio" name="q3" id="q3a"> أ) كالمشي في صحراء واسعة</label><br>
+        <label><input type="radio" name="q3" id="q3b"> ب) كزراعة شجرة تحتاج إلى وقت</label><br>
+        <label><input type="radio" name="q3" id="q3c"> ج) كركوب القطار السريع</label>
+      </div>
+
+      <div class="question" data-correct="q4b">
+        <strong>4. ما هي الطريقة الفعالة لتعلم اللغة حسب المتحدث؟</strong><br>
+        <label><input type="radio" name="q4" id="q4a"> أ) الدراسة النظرية فقط</label><br>
+        <label><input type="radio" name="q4" id="q4b"> ب) الاستماع والممارسة العملية</label><br>
+        <label><input type="radio" name="q4" id="q4c"> ج) حفظ القواعد النحوية فقط</label>
+      </div>
+
+      <div class="question" data-correct="q5c">
+        <strong>5. كيف يشعر المستمع بعد سماع هذا الصوت؟</strong><br>
+        <label><input type="radio" name="q5" id="q5a"> أ) بالحزن واليأس</label><br>
+        <label><input type="radio" name="q5" id="q5b"> ب) بالإحباط والملل</label><br>
+        <label><input type="radio" name="q5" id="q5c"> ج) بالحماس والدافع للتعلم</label>
+      </div>
+    </div>
+
+    <button onclick="showResult()" style="margin: 10px 0; padding: 10px 20px; font-size: 16px;">عرض النتيجة</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let fontSize = 16;
+    const questionsDiv = document.getElementById("questions");
+function zoomIn() {
+      fontSize += 2;
+      questionsDiv.style.fontSize = fontSize + "px";
+    }
+
+    function zoomOut() {
+      if (fontSize > 10) {
+        fontSize -= 2;
+        questionsDiv.style.fontSize = fontSize + "px";
+      }
+    }
+
+    function showResult() {
+      const questions = document.querySelectorAll(".question");
+      let correctCount = 0;
+
+      questions.forEach(q => {
+        const correctId = q.dataset.correct;
+        const selected = q.querySelector("input[type=radio]:checked");
+
+        // Remove old styles
+        q.classList.remove("correct", "incorrect");
+
+        if (selected) {
+          if (selected.id === correctId) {
+            q.classList.add("correct");
+            correctCount++;
+          } else {
+            q.classList.add("incorrect");
+          }
+        } else {
+          q.classList.add("incorrect");
+        }
+      });
+
+      const percentage = Math.round((correctCount / questions.length) * 100);
+      document.getElementById("result").innerText = نتيجتك: ${correctCount} من ${questions.length} (${percentage}٪);
+    }
+  </script>
+
+</body>
+</html>
