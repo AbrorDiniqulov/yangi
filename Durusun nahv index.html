@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Durusun Nahv</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    .fullscreen-ad {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: black;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .fullscreen-ad img {
+      max-width: 90%; max-height: 90%;
+      object-fit: contain; border-radius: 12px;
+    }
+    .overlay-info {
+      margin-top: 20px;
+      text-align: center;
+      z-index: 10000;
+    }
+    .overlay-info h1 {
+      font-size: 24px;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .timer {
+      font-size: 20px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 16px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .main-content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background: white;
+      color: #0083b0;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+    }
+    .floating-ad {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      width: 320px; height: 200px;
+      background: black;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 888;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 10px;
+    }
+    .floating-ad img {
+      width: 100%;
+      height: calc(100% - 40px);
+      object-fit: cover;
+      border-bottom: 1px solid #222;
+    }
+    .floating-ad .telegram-button {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      padding: 6px 12px;
+      background: #0088cc;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #fff;
+      width: calc(100% - 20px);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reklama -->
+  <div class="fullscreen-ad" id="fullscreenAd">
+    <img id="adImage" src="" alt="Reklama rasmi" />
+    <div class="overlay-info">
+      <h1>Reklamani ko‘rib chiqing</h1>
+      <div class="timer" id="timer">5</div>
+    </div>
+  </div>
+
+  <!-- Asosiy sahifa -->
+  <div class="main-content" id="mainContent">
+    <h1>Xush kelibsiz!</h1>
+    <div class="button-container">
+    <button onclick="location.href='yodlash.html'">Durusun Nahv birinchi kitob</button>
+</body>
+    </div>
+  </div>
+
+  <!-- Mini reklama -->
+  <div class="floating-ad" id="floatingAd">
+    <img id="miniAd" src="" alt="Mini reklama" />
+    <a href="https://t.me/abrordiniqulov" target="_blank" class="telegram-button">📩 Telegram orqali bog‘lanish</a>
+  </div>
+
+  <script>
+    const jsonURL = "https://raw.githubusercontent.com/AbrorDiniqulov/reklama/main/ads.json?v=" + new Date().getTime();
+    fetch(jsonURL)
+      .then(res => res.json())
+      .then(data => {
+        const allAds = data.ads;
+        let seenFirst = localStorage.getItem("seen_first_ad");
+        let adToShow = "";
+        if (!seenFirst) {
+          adToShow = allAds[allAds.length - 1];
+          localStorage.setItem("seen_first_ad", "true");
+        } else {
+          adToShow = allAds[Math.floor(Math.random() * allAds.length)];
+        }
+        document.getElementById("adImage").src = adToShow;
+        document.getElementById("miniAd").src = adToShow;
+        let countdown = 5;
+        const timerEl = document.getElementById("timer");
+        const interval = setInterval(() => {
+          countdown--;
+          timerEl.textContent = countdown;
+          if (countdown === 0) {
+            clearInterval(interval);
+            document.getElementById("fullscreenAd").style.display = "none";
+            document.getElementById("mainContent").style.display = "flex";
+            document.getElementById("floatingAd").style.display = "flex";
+          }
+        }, 1000);
+      })
+      .catch(error => {
+        console.error("Reklama yuklashda xatolik:", error);
+        document.getElementById("fullscreenAd").style.display = "none";
+        document.getElementById("mainContent").style.display = "flex";
+      });
+  </script>
+
+</body>
+</html>
