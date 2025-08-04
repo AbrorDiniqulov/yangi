@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uz" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Durusun Nahv birinchi kitob</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2e7d32;
+    }
+
+    .lesson-link {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: #ffffff;
+      color: #2e7d32;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .lesson-link:hover {
+      background-color: #e8f5e9;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .footer {
+      max-width: 400px;
+      margin: 50px auto 20px auto;
+      padding: 20px;
+      background: #f0f4c3;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #33691e;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .footer span {
+      color: #1b5e20;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .lesson-link {
+        font-size: 1rem;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Durusun Nahv birinchi kitob</h1>
+
+  <div id="lessons"></div>
+
+  <div class="footer">
+     Tuzuvchi: <span>Diniqulov Abror</span><br>
+     Matn teruvchi: <span>Ostonova Fotima</span>
+  </div>
+
+  <script>
+    const container = document.getElementById('lessons');
+    const baseUrl = "https://abrordiniqulov.github.io/yangi/";
+
+    for (let i = 1; i <= 42; i++) {
+      const link = document.createElement('a');
+      link.href = `${baseUrl}${i}-dars.html`;
+      link.className = 'lesson-link';
+      link.textContent = ` Dars ${i}`;
+      container.appendChild(link);
+    }
+  </script>
+
+</body>
+</html>
