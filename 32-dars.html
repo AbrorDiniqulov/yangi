@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدرس التاسع: نَصْبُ الْاسْمِ - الْمَفْعُولُ بِهِ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #edf2f7;
+      padding: 20px;
+      line-height: 2;
+    }
+    .content {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    .check-btn {
+      background-color: #2f855a;
+      color: white;
+    }
+    .back-btn {
+      background-color: #3182ce;
+      color: white;
+    }
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <h2>الْمُنَادَى</h2>
+  <p>وَالتَّاسِعُ : نَحْوُ "رَؤُوفًا" ، وَ "رَسُولَ" ، مِنْ : يَا رَؤُوفًا بِالْعِبَادِ . وَ : يَا رَسُولَ اللَّهِ . وَيُسَمَّى : "مُنَادًى" .</p>
+  <p>إِذَا نَادَيْنَا إِنْسَانًا بِاسْمِهِ أَوْ صِفَتِهِ فَقُلْنَا : يَا عَبْدَ الرَّحْمَنِ ، أَوْ : يَا زَيْنَ الدِّينِ ، أَوْ : يَا رَفِيعَ الْقَدْرِ ، فَالَّذِي يَقَعُ بَعْدَ "يَا" يُسَمَّى : "مُنَادًى" ، وَيَكُونُ مَنْصُوبًا .</p>
+  <p>وَمِثَالُهُ أَيْضًا : يَا رَؤُوفًا بِالْعِبَادِ ، وَ : يَا غَافِلًا وَالْمَوْتُ يَطْلُبُهُ ، وَ : يَا أَكْرَمَ الْخَلْقِ .</p>
+  <p>فَكُلُّ اسْمٍ يَقَعُ بَعْدَ حَرْفِ النِّدَاءِ (يَا) يُسَمَّى "مُنَادًى" .</p>
+</div>
+
+<div class="question">
+  <strong>1. مَا الْعَامِلُ فِي الْمُنَادَى؟</strong><br>
+  <input type="radio" name="q1" value="0"> الفِعْلُ<br>
+  <input type="radio" name="q1" value="0"> الْمُبْتَدَأ<br>
+  <input type="radio" name="q1" value="1"> حَرْفُ النِّدَاءِ<br>
+</div>
+
+<div class="question">
+  <strong>2. مَا إِعْرَابُ كَلِمَةِ "رَسُولَ" فِي : "يَا رَسُولَ اللَّهِ"؟</strong><br>
+  <input type="radio" name="q2" value="0"> بَدَل<br>
+  <input type="radio" name="q2" value="1"> مُنَادًى مَنْصُوب<br>
+  <input type="radio" name="q2" value="0"> نَعْت<br>
+</div>
+
+<div class="question">
+  <strong>3. أَيُّ مِمَّا يَلِي يَحْتَوِي عَلَى مُنَادًى؟</strong><br>
+  <input type="radio" name="q3" value="0"> ذَهَبَ زَيْدٌ إِلَى السُّوقِ<br>
+  <input type="radio" name="q3" value="1"> يَا أَكْرَمَ الْخَلْقِ<br>
+  <input type="radio" name="q3" value="0"> قَرَأَ أَحْمَدُ الدَّرْسَ<br>
+</div>
+
+<div class="question">
+  <strong>4. فِي : "يَا رَفِيعَ الْقَدْرِ"، كَلِمَةُ "رَفِيعَ" تُسَمَّى:</strong><br>
+  <input type="radio" name="q4" value="1"> مُنَادًى<br>
+  <input type="radio" name="q4" value="0"> مَفْعُولًا بِهِ<br>
+  <input type="radio" name="q4" value="0"> مُبْتَدَأ<br>
+</div>
+
+<div class="question">
+  <strong>5. فِي : "يَا رَؤُوفًا بِالْعِبَادِ"، كَيْفَ يُعْرَبُ "رَؤُوفًا"؟</strong><br>
+  <input type="radio" name="q5" value="0"> نَائِبُ فَاعِل<br>
+  <input type="radio" name="q5" value="1"> مُنَادًى مَنْصُوب<br>
+  <input type="radio" name="q5" value="0"> صِفَةٌ<br>
+</div>
+
+<div style="text-align: center;">
+  <button class="check-btn" onclick="checkAnswers()">📊 اعْرِفْ نَتِيجَتَكَ</button>
+  <button class="back-btn" onclick="history.back()">🔙 عودة</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkAnswers() {
+    let score = 0;
+    for (let i = 1; i <= 5; i++) {
+      const selected = document.querySelector('input[name="q' + i + '"]:checked');
+      if (selected && selected.value === "1") score++;
+    }
+    document.getElementById("result").innerText = "✅ نتيجتك: " + score + " من 5";
+  }
+</script>
+
+</body>
+</html>

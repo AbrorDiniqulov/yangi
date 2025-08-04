@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدرس التاسع: نَصْبُ الْاسْمِ - الْمَفْعُولُ بِهِ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #edf2f7;
+      padding: 20px;
+      line-height: 2;
+    }
+    .content {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    .check-btn {
+      background-color: #2f855a;
+      color: white;
+    }
+    .back-btn {
+      background-color: #3182ce;
+      color: white;
+    }
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <h2>خَبَرُ « كَانَ »</h2>
+  <p>وَالْعَاشِرُ : نَحْوُ "مُثْمِرًا" مِنْ : كَانَ الْبُسْتَانُ مُثْمِرًا . وَيُسَمَّى : خَبَرَ "كَانَ" .</p>
+  <p>يَقَعُ بَعْدَ فِعْلِ "كَانَ" اسْمَانِ : أَوَّلُهُمَا مَرْفُوعٌ وَيُسَمَّى اسْمَ "كَانَ" ، وَالثَّانِي مَنْصُوبٌ وَيُسَمَّى خَبَرَهَا . وَلِذَلِكَ يُعَدُّ مِنَ الْمَنْصُوبَاتِ .</p>
+  <p>وَمِثْلُ "كَانَ" الْأَفْعَالُ الَّتِي ذُكِرَتْ فِي الْمَوْضِعِ الْخَامِسِ مِنْ مَوَاضِعِ رَفْعِ الاسم ص ١٤ .</p>
+  <p>وَقَدْ تَقَدَّمَ مِنْ أَمْثِلَةِ ذَلِكَ : أَصْبَحَ الشَّجَرُ مُورِقًا ، وَ : مَا زَالَ الْجَوُّ مُعْتَدِلًا ، وَ : صَارَ الْبُسْتَانُ مُثْمِرًا .</p>
+</div>
+
+<div class="question">
+  <strong>1. فِي جُمْلَةِ : "كَانَ الْبُسْتَانُ مُثْمِرًا" ، كَلِمَةُ "مُثْمِرًا" تُسَمَّى:</strong><br>
+  <input type="radio" name="q1" value="0"> نَعْتًا<br>
+  <input type="radio" name="q1" value="1"> خَبَرَ كَانَ<br>
+  <input type="radio" name="q1" value="0"> مَفْعُولًا<br>
+</div>
+
+<div class="question">
+  <strong>2. مَا الْإِعْرَابُ الصَّحِيحُ لِخَبَرِ "كَانَ"؟</strong><br>
+  <input type="radio" name="q2" value="1"> مَنْصُوب<br>
+  <input type="radio" name="q2" value="0"> مَجْرُور<br>
+  <input type="radio" name="q2" value="0"> مَرْفُوع<br>
+</div>
+
+<div class="question">
+  <strong>3. أَيُّ الْجُمَلِ تَحْتَوِي عَلَى خَبَرِ "كَانَ"؟</strong><br>
+  <input type="radio" name="q3" value="0"> قَرَأَ زَيْدٌ الْكِتَابَ<br>
+  <input type="radio" name="q3" value="1"> كَانَ الْجَوُّ بَارِدًا<br>
+  <input type="radio" name="q3" value="0"> خَرَجَ الطُّلَّابُ مِنَ الْمَدْرَسَةِ<br>
+</div>
+
+<div class="question">
+  <strong>4. فِي جُمْلَةِ : "صَارَ الْبُسْتَانُ مُثْمِرًا" ، كَلِمَةُ "صَارَ" تُعَامَلُ مِثْلَ:</strong><br>
+  <input type="radio" name="q4" value="0"> إِسْمٍ<br>
+  <input type="radio" name="q4" value="0"> حَرْفٍ<br>
+  <input type="radio" name="q4" value="1"> فِعْلٍ نَاقِصٍ<br>
+</div>
+
+<div class="question">
+  <strong>5. فِي : "مَا زَالَ الْجَوُّ مُعْتَدِلًا" ، كَلِمَةُ "مُعْتَدِلًا" تُسَمَّى:</strong><br>
+  <input type="radio" name="q5" value="0"> فَاعِلًا<br>
+  <input type="radio" name="q5" value="0"> مَفْعُولًا بِهِ<br>
+  <input type="radio" name="q5" value="1"> خَبَرَ "مَا زَالَ"<br>
+</div>
+
+<div style="text-align: center;">
+  <button class="check-btn" onclick="checkAnswers()">📊 اعْرِفْ نَتِيجَتَكَ</button>
+  <button class="back-btn" onclick="history.back()">🔙 عودة</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkAnswers() {
+    let score = 0;
+    for (let i = 1; i <= 5; i++) {
+      const selected = document.querySelector('input[name="q' + i + '"]:checked');
+      if (selected && selected.value === "1") score++;
+    }
+    document.getElementById("result").innerText = "✅ نتيجتك: " + score + " من 5";
+  }
+</script>
+
+</body>
+</html>

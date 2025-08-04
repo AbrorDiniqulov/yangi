@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدرس التاسع: نَصْبُ الْاسْمِ - الْمَفْعُولُ بِهِ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #edf2f7;
+      padding: 20px;
+      line-height: 2;
+    }
+    .content {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    .check-btn {
+      background-color: #2f855a;
+      color: white;
+    }
+    .back-btn {
+      background-color: #3182ce;
+      color: white;
+    }
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TEST QUESTIONS -->
+<div class="question">
+  <strong>1. مَا نَوْعُ (يُؤَخِّرْ) فِي جُمْلَة: "لَا يُؤَخِّرْ أَحَدٌ..."؟</strong><br>
+  <input type="radio" name="q1" value="1"> فعل مضارع مجزوم بـ"لا" الناهية<br>
+  <input type="radio" name="q1" value="0"> فعل ماضٍ مبني<br>
+  <input type="radio" name="q1" value="0"> مصدر مؤول<br>
+</div>
+
+<div class="question">
+  <strong>2. مَا إِعْرَابُ (أَحَدٌ) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q2" value="0"> مفعول به منصوب<br>
+  <input type="radio" name="q2" value="1"> فاعل مرفوع<br>
+  <input type="radio" name="q2" value="0"> بدل من "عمل"<br>
+</div>
+
+<div class="question">
+  <strong>3. مَا إِعْرَابُ (اليَوْمِ)؟</strong><br>
+  <input type="radio" name="q3" value="0"> فاعل مرفوع<br>
+  <input type="radio" name="q3" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q3" value="1"> مضاف إليه مجرور<br>
+</div>
+
+<div class="question">
+  <strong>4. مَا إِعْرَابُ (غَدٍ)؟</strong><br>
+  <input type="radio" name="q4" value="0"> فاعل منصوب<br>
+  <input type="radio" name="q4" value="1"> اسم مجرور باللام<br>
+  <input type="radio" name="q4" value="0"> خبر مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>5. مَاذَا يُسَمَّى تَحْلِيلُ الجُمْلَة نَحْوِيًّا؟</strong><br>
+  <input type="radio" name="q5" value="0"> التذكير<br>
+  <input type="radio" name="q5" value="0"> التقييد<br>
+  <input type="radio" name="q5" value="1"> الإعراب<br>
+</div>
+
+<div class="question">
+  <strong>6. مَا نَوْعُ (لا) فِي الجُمْلَة: "لَا يُؤَخِّرْ أَحَدٌ"؟</strong><br>
+  <input type="radio" name="q6" value="0"> لا النافية للجنس<br>
+  <input type="radio" name="q6" value="1"> لا الناهية<br>
+  <input type="radio" name="q6" value="0"> لا الزائدة<br>
+</div>
+
+<div class="question">
+  <strong>7. مَا إِعْرَابُ (عَمَلَ) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q7" value="0"> بدل من الفاعل<br>
+  <input type="radio" name="q7" value="0"> مبتدأ مرفوع<br>
+  <input type="radio" name="q7" value="1"> مفعول به منصوب<br>
+</div>
+
+<div class="question">
+  <strong>8. مَا مَوْقِعُ (التاريخ) فِي جُمْلَة: "إن التاريخ مرآة..."؟</strong><br>
+  <input type="radio" name="q8" value="1"> اسم إن منصوب<br>
+  <input type="radio" name="q8" value="0"> خبر إن مرفوع<br>
+  <input type="radio" name="q8" value="0"> بدل من مرآة<br>
+</div>
+
+<div class="question">
+  <strong>9. مَا إِعْرَابُ (مرآة) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q9" value="0"> اسم إن<br>
+  <input type="radio" name="q9" value="1"> خبر إن مرفوع<br>
+  <input type="radio" name="q9" value="0"> حال منصوبة<br>
+</div>
+
+<div class="question">
+  <strong>10. مَا نَوْعُ (اللام) فِي جُمْلَة: "لِغَدٍ"؟</strong><br>
+  <input type="radio" name="q10" value="0"> لام التعليل<br>
+  <input type="radio" name="q10" value="0"> لام الابتداء<br>
+  <input type="radio" name="q10" value="1"> لام الجر<br>
+</div>
+
+<div class="question">
+  <strong>11. مَا نَوْعُ (إِنَّ) فِي الجُمْلَة: "إِنَّ التاريخ مرآة..."؟</strong><br>
+  <input type="radio" name="q11" value="1"> حرف توكيد ونصب<br>
+  <input type="radio" name="q11" value="0"> حرف عطف<br>
+  <input type="radio" name="q11" value="0"> اسم إن<br>
+</div>
+
+<div class="question">
+  <strong>12. مَا إِعْرَابُ (الفاروق) فِي جُمْلَة: "في خلافة الفاروق"؟</strong><br>
+  <input type="radio" name="q12" value="0"> فاعل مرفوع<br>
+  <input type="radio" name="q12" value="1"> مضاف إليه مجرور<br>
+  <input type="radio" name="q12" value="0"> خبر إن<br>
+</div>
+
+<div class="question">
+  <strong>13. مَا نَوْعُ (سنة) فِي الجُمْلَة: "سَنَة وَشَهْرَيْنِ"؟</strong><br>
+  <input type="radio" name="q13" value="0"> بدل<br>
+  <input type="radio" name="q13" value="0"> فعل ماضٍ<br>
+  <input type="radio" name="q13" value="1"> ظرف زمان منصوب<br>
+</div>
+
+<div class="question">
+  <strong>14. مَا نَوْعُ (دَخَلَ) فِي جُمْلَة: "ثم دخل الجيش..."؟</strong><br>
+  <input type="radio" name="q14" value="1"> فعل ماضٍ مبني<br>
+  <input type="radio" name="q14" value="0"> اسم فاعل<br>
+  <input type="radio" name="q14" value="0"> فعل مضارع مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>15. مَا إِعْرَابُ (الجيش) فِي نَفْسِ الجُمْلَة؟</strong><br>
+  <input type="radio" name="q15" value="0"> مفعول به<br>
+  <input type="radio" name="q15" value="0"> بدل من الفاعل<br>
+  <input type="radio" name="q15" value="1"> فاعل مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>16. فِي جُمْلَة: "فأئرا بالنصر"، مَا نَوْعُ (الباء)؟</strong><br>
+  <input type="radio" name="q16" value="1"> حرف جر<br>
+  <input type="radio" name="q16" value="0"> حرف عطف<br>
+  <input type="radio" name="q16" value="0"> حرف نداء<br>
+</div>
+
+<div class="question">
+  <strong>17. مَا نَوْعُ (يُعْرَفُ) فِي جُمْلَة: "يُعْرَفُ صاحب الأمانة..."؟</strong><br>
+  <input type="radio" name="q17" value="0"> اسم فاعل<br>
+  <input type="radio" name="q17" value="1"> فعل مضارع مبني للمجهول<br>
+  <input type="radio" name="q17" value="0"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>18. مَا إِعْرَابُ (صاحب) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q18" value="0"> مفعول فيه<br>
+  <input type="radio" name="q18" value="0"> مفعول لأجله<br>
+  <input type="radio" name="q18" value="1"> نائب فاعل مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>19. مَا نَوْعُ (الإعطاء) فِي الجُمْلَة: "عند الأخذ والإعطاء"؟</strong><br>
+  <input type="radio" name="q19" value="0"> اسم فاعل<br>
+  <input type="radio" name="q19" value="1"> مصدر مؤول<br>
+  <input type="radio" name="q19" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>20. مَا إِعْرَابُ (عند) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q20" value="1"> ظرف مكان مبني في محل نصب<br>
+  <input type="radio" name="q20" value="0"> خبر إن مرفوع<br>
+  <input type="radio" name="q20" value="0"> مفعول به منصوب<br>
+</div>
+
+<div class="question">
+  <strong>21. مَا إِعْرَابُ (التاريخ) فِي جُمْلَة: "إن التاريخ مرآة..."؟</strong><br>
+  <input type="radio" name="q21" value="1"> اسم إن منصوب<br>
+  <input type="radio" name="q21" value="0"> خبر إن مرفوع<br>
+  <input type="radio" name="q21" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>22. مَا نَوْعُ (مرآة) فِي الجُمْلَة؟</strong><br>
+  <input type="radio" name="q22" value="0"> فعل ماضٍ<br>
+  <input type="radio" name="q22" value="1"> خبر إن مرفوع<br>
+  <input type="radio" name="q22" value="0"> مفعول مطلق<br>
+</div>
+
+<div class="question">
+  <strong>23. مَا إِعْرَابُ (حوادث) فِي جُمْلَة: "لحوادث الزمان"؟</strong><br>
+  <input type="radio" name="q23" value="0"> بدل<br>
+  <input type="radio" name="q23" value="0"> فاعل<br>
+  <input type="radio" name="q23" value="1"> اسم مجرور بعد اللام<br>
+</div>
+
+<div class="question">
+  <strong>24. مَا نَوْعُ (الزمان) فِي نَفْسِ الجُمْلَة؟</strong><br>
+  <input type="radio" name="q24" value="0"> حال منصوب<br>
+  <input type="radio" name="q24" value="1"> مضاف إليه مجرور<br>
+  <input type="radio" name="q24" value="0"> اسم إن<br>
+</div>
+
+<div class="question">
+  <strong>25. مَا نَوْعُ (قال) فِي: "قال أعرابي..."؟</strong><br>
+  <input type="radio" name="q25" value="1"> فعل ماضٍ مبني<br>
+  <input type="radio" name="q25" value="0"> اسم فاعل<br>
+  <input type="radio" name="q25" value="0"> فعل مضارع مجزوم<br>
+</div>
+
+<div class="question">
+  <strong>26. مَا إِعْرَابُ (أعرابي)؟</strong><br>
+  <input type="radio" name="q26" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q26" value="1"> فاعل مرفوع<br>
+  <input type="radio" name="q26" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>27. فِي قَوْلِهِ: "البلاغة حذف الفضول..."، مَا إِعْرَابُ (حذف)؟</strong><br>
+  <input type="radio" name="q27" value="0"> خبر مرفوع<br>
+  <input type="radio" name="q27" value="0"> مفعول به<br>
+  <input type="radio" name="q27" value="1"> بدل من "البلاغة"<br>
+</div>
+
+<div class="question">
+  <strong>28. مَا نَوْعُ (لا يزال) فِي الجُمْلَة: "لا يزال الجاهلي لاهياً..."؟</strong><br>
+  <input type="radio" name="q28" value="1"> فعل ناسخ<br>
+  <input type="radio" name="q28" value="0"> أداة نفي<br>
+  <input type="radio" name="q28" value="0"> حرف شرط<br>
+</div>
+
+<div class="question">
+  <strong>29. مَا إِعْرَابُ (لاهياً) فِي نَفْسِ الجُمْلَة؟</strong><br>
+  <input type="radio" name="q29" value="0"> مفعول لأجله<br>
+  <input type="radio" name="q29" value="1"> خبر لا يزال منصوب<br>
+  <input type="radio" name="q29" value="0"> فاعل مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>30. مَا نَوْعُ (الضمائر) فِي جُمْلَة: "الأسماء معربة إلا الضمائر"؟</strong><br>
+  <input type="radio" name="q30" value="0"> اسم إن<br>
+  <input type="radio" name="q30" value="0"> خبر كان<br>
+  <input type="radio" name="q30" value="1"> مستثنى منصوب<br>
+</div>
+
+<div class="question">
+  <strong>31. مَا نَوْعُ (الأسماء) فِي جُمْلَة: "الأسماء معربة..."؟</strong><br>
+  <input type="radio" name="q31" value="1"> مبتدأ مرفوع<br>
+  <input type="radio" name="q31" value="0"> خبر إن<br>
+  <input type="radio" name="q31" value="0"> مفعول مطلق<br>
+</div>
+
+<div class="question">
+  <strong>32. مَا إِعْرَابُ (معربة)؟</strong><br>
+  <input type="radio" name="q32" value="0"> حال منصوب<br>
+  <input type="radio" name="q32" value="1"> خبر مرفوع<br>
+  <input type="radio" name="q32" value="0"> مفعول به أول<br>
+</div>
+
+<div class="question">
+  <strong>33. فِي قَوْلِهِ: "الأفعال مبنية إلا المضارع"، مَا نَوْعُ (مبنية)؟</strong><br>
+  <input type="radio" name="q33" value="0"> مبتدأ<br>
+  <input type="radio" name="q33" value="1"> خبر مرفوع<br>
+  <input type="radio" name="q33" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>34. (إلا المضارع)، مَا إِعْرَابُ (المضارع)؟</strong><br>
+  <input type="radio" name="q34" value="0"> فاعل<br>
+  <input type="radio" name="q34" value="0"> بدل<br>
+  <input type="radio" name="q34" value="1"> مستثنى منصوب<br>
+</div>
+
+<div class="question">
+  <strong>35. فِي جُمْلَة: "خير الأمور الوسط"، مَا إِعْرَابُ (خير)؟</strong><br>
+  <input type="radio" name="q35" value="1"> مبتدأ مرفوع<br>
+  <input type="radio" name="q35" value="0"> بدل<br>
+  <input type="radio" name="q35" value="0"> خبر إن<br>
+</div>
+
+<div class="question">
+  <strong>36. (الأمور) فِي نَفْسِ الجُمْلَة، تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q36" value="0"> فاعل<br>
+  <input type="radio" name="q36" value="1"> مضاف إليه مجرور<br>
+  <input type="radio" name="q36" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>37. مَا إِعْرَابُ (الوسط)؟</strong><br>
+  <input type="radio" name="q37" value="0"> مبتدأ<br>
+  <input type="radio" name="q37" value="0"> فاعل<br>
+  <input type="radio" name="q37" value="1"> بدل من "خير"<br>
+</div>
+
+<div class="question">
+  <strong>38. مَا نَوْعُ (الجاهلي) فِي جُمْلَة: "لا يزال الجاهلي لاهيا"؟</strong><br>
+  <input type="radio" name="q38" value="0"> خبر لا يزال<br>
+  <input type="radio" name="q38" value="1"> اسم لا يزال مرفوع<br>
+  <input type="radio" name="q38" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>39. (لاهياً) فِي نَفْسِ الجُمْلَة، تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q39" value="0"> اسم إن<br>
+  <input type="radio" name="q39" value="1"> خبر لا يزال منصوب<br>
+  <input type="radio" name="q39" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>40. فِي جُمْلَة: "المرء قليل بنفسه كثير بإخوانه"، مَا نَوْعُ (كثير)؟</strong><br>
+  <input type="radio" name="q40" value="1"> خبر ثانٍ مرفوع<br>
+  <input type="radio" name="q40" value="0"> حال منصوب<br>
+  <input type="radio" name="q40" value="0"> مفعول مطلق<br>
+</div>
+
+<div class="question">
+  <strong>41. فِي قَوْلِهِ: "يُستعمل الذهب"، مَا إِعْرَابُ (يُستعمل)؟</strong><br>
+  <input type="radio" name="q41" value="1"> فعل مضارع مبني للمجهول<br>
+  <input type="radio" name="q41" value="0"> اسم فاعل<br>
+  <input type="radio" name="q41" value="0"> مصدر مؤول<br>
+</div>
+
+<div class="question">
+  <strong>42. (الذهب) فِي نَفْسِ الجُمْلَة، مَا مَوْقِعُهُ؟</strong><br>
+  <input type="radio" name="q42" value="0"> فاعل مرفوع<br>
+  <input type="radio" name="q42" value="1"> نائب فاعل مرفوع<br>
+  <input type="radio" name="q42" value="0"> مفعول به<br>
+</div>
+
+<div class="question">
+  <strong>43. فِي جُمْلَة: "الإخوان زينة في الرخاء"، مَا إِعْرَابُ (زينة)؟</strong><br>
+  <input type="radio" name="q43" value="0"> بدل منصوب<br>
+  <input type="radio" name="q43" value="0"> مفعول لأجله<br>
+  <input type="radio" name="q43" value="1"> خبر مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>44. (في الرخاء) تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q44" value="0"> مضاف إليه<br>
+  <input type="radio" name="q44" value="1"> جار ومجرور متعلق بـ"زينة"<br>
+  <input type="radio" name="q44" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>45. فِي جُمْلَة: "تمر الفرص مر السحاب"، مَا نَوْعُ (تمر)؟</strong><br>
+  <input type="radio" name="q45" value="1"> فعل مضارع مرفوع<br>
+  <input type="radio" name="q45" value="0"> اسم فاعل<br>
+  <input type="radio" name="q45" value="0"> مصدر مؤول<br>
+</div>
+
+<div class="question">
+  <strong>46. (الفرص) فِي نَفْسِ الجُمْلَة، تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q46" value="0"> حال منصوب<br>
+  <input type="radio" name="q46" value="0"> مفعول به<br>
+  <input type="radio" name="q46" value="1"> فاعل مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>47. (مر السحاب) فِي الجُمْلَة السَّابِقَة، مَا نَوْعُهَا؟</strong><br>
+  <input type="radio" name="q47" value="1"> حال تمثيلية<br>
+  <input type="radio" name="q47" value="0"> بدل اشتمال<br>
+  <input type="radio" name="q47" value="0"> صفة مشبهة<br>
+</div>
+
+<div class="question">
+  <strong>48. فِي جُمْلَة: "الأسماء معربة إلا الضمائر"، (الضمائر) تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q48" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q48" value="0"> بدل مرفوع<br>
+  <input type="radio" name="q48" value="1"> مستثنى منصوب<br>
+</div>
+
+<div class="question">
+  <strong>49. مَا نَوْعُ (يبيت) فِي جُمْلَة: "يبيت قلبه خاليا"؟</strong><br>
+  <input type="radio" name="q49" value="0"> فعل ماضٍ<br>
+  <input type="radio" name="q49" value="1"> فعل مضارع مرفوع<br>
+  <input type="radio" name="q49" value="0"> اسم مفعول<br>
+</div>
+
+<div class="question">
+  <strong>50. (خاليا) فِي نَفْسِ الجُمْلَة، تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q50" value="1"> حال منصوب<br>
+  <input type="radio" name="q50" value="0"> بدل منصوب<br>
+  <input type="radio" name="q50" value="0"> خبر إن<br>
+</div>
+
+<div class="question">
+  <strong>51. (يُصْبِح) فِي جُمْلَة: "يُصْبِح طرفه ساهيا" هُوَ:</strong><br>
+  <input type="radio" name="q51" value="1"> فعل مضارع ناقص مرفوع<br>
+  <input type="radio" name="q51" value="0"> اسم مرفوع<br>
+  <input type="radio" name="q51" value="0"> بدل منصوب<br>
+</div>
+
+<div class="question">
+  <strong>52. (ساهيا) فِي نَفْسِ الجُمْلَة تُعْرَبُ كَـ:</strong><br>
+  <input type="radio" name="q52" value="0"> بدل<br>
+  <input type="radio" name="q52" value="1"> خبر "يُصبح" منصوب<br>
+  <input type="radio" name="q52" value="0"> مفعول لأجله<br>
+</div>
+
+<div class="question">
+  <strong>53. "الإخْوانُ عُدَّةٌ فِي الْبَلَاءِ" - مَا نَوْعُ الجُمْلَة؟</strong><br>
+  <input type="radio" name="q53" value="0"> فعلية مثبتة<br>
+  <input type="radio" name="q53" value="0"> شرطية<br>
+  <input type="radio" name="q53" value="1"> اسمية مثبتة<br>
+</div>
+
+<div class="question">
+  <strong>54. (فِي الْبَلَاءِ) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q54" value="0"> مضاف إليه<br>
+  <input type="radio" name="q54" value="1"> جار ومجرور متعلق بالخبر<br>
+  <input type="radio" name="q54" value="0"> بدل بعض من كل<br>
+</div>
+
+<div class="question">
+  <strong>55. (يكون) فِي جُمْلَة: "يكون الزئبق سائلا..." يُعْرَبُ:</strong><br>
+  <input type="radio" name="q55" value="0"> اسم ناقص<br>
+  <input type="radio" name="q55" value="0"> اسم فعل<br>
+  <input type="radio" name="q55" value="1"> فعل ناقص ناسخ مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>56. (سائلا) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q56" value="0"> حال<br>
+  <input type="radio" name="q56" value="1"> خبر "يكون" منصوب<br>
+  <input type="radio" name="q56" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>57. "المرء قليل بنفسه كثير بإخوانه" - (بنفسه) تُعْرَبُ:</strong><br>
+  <input type="radio" name="q57" value="0"> حال<br>
+  <input type="radio" name="q57" value="0"> فاعل<br>
+  <input type="radio" name="q57" value="1"> جار ومجرور متعلق بـ"قليل"<br>
+</div>
+
+<div class="question">
+  <strong>58. (بإخوانه) فِي نَفْسِ الجُمْلَة، تُعْرَبُ:</strong><br>
+  <input type="radio" name="q58" value="0"> حال<br>
+  <input type="radio" name="q58" value="1"> جار ومجرور متعلق بـ"كثير"<br>
+  <input type="radio" name="q58" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>59. (البلاغة حذف الفضول) - مَا نَوْعُ "حذف"؟</strong><br>
+  <input type="radio" name="q59" value="1"> بدل من "البلاغة"<br>
+  <input type="radio" name="q59" value="0"> خبر إن<br>
+  <input type="radio" name="q59" value="0"> مفعول به<br>
+</div>
+
+<div class="question">
+  <strong>60. (تقريب البعيد) فِي نَفْسِ الجُمْلَة، تُعْرَبُ:</strong><br>
+  <input type="radio" name="q60" value="0"> بدل منصوب<br>
+  <input type="radio" name="q60" value="0"> فاعل مرفوع<br>
+  <input type="radio" name="q60" value="1"> معطوف على "حذف الفضول"<br>
+</div>
+
+<div class="question">
+  <strong>61. (الأفعال مبنية إلا المضارع) - مَا حُكْمُ الفِعْلِ الْمُضَارِع؟</strong><br>
+  <input type="radio" name="q61" value="1"> معرب إلا إذا اتصل بنون النسوة<br>
+  <input type="radio" name="q61" value="0"> مبني دائماً<br>
+  <input type="radio" name="q61" value="0"> مرفوع دائماً<br>
+</div>
+
+<div class="question">
+  <strong>62. (إن وعد الحر دين عليه) - مَا مَوْقِعُ "وعد"؟</strong><br>
+  <input type="radio" name="q62" value="0"> خبر إن<br>
+  <input type="radio" name="q62" value="1"> اسم إن منصوب<br>
+  <input type="radio" name="q62" value="0"> بدل<br>
+</div>
+
+<div class="question">
+  <strong>63. (دين) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q63" value="0"> حال<br>
+  <input type="radio" name="q63" value="0"> بدل منصوب<br>
+  <input type="radio" name="q63" value="1"> خبر إن مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>64. (عليه) فِي نَفْسِ الجُمْلَة:</strong><br>
+  <input type="radio" name="q64" value="0"> مفعول به ثاني<br>
+  <input type="radio" name="q64" value="1"> جار ومجرور متعلق بـ "دين"<br>
+  <input type="radio" name="q64" value="0"> بدل من وعد<br>
+</div>
+
+<div class="question">
+  <strong>65. (آفة المروءة خلف الوعد) - (خلف) تُعْرَبُ:</strong><br>
+  <input type="radio" name="q65" value="0"> اسم إن منصوب<br>
+  <input type="radio" name="q65" value="0"> مفعول به<br>
+  <input type="radio" name="q65" value="1"> بدل من "آفة"<br>
+</div>
+
+<div class="question">
+  <strong>66. (المروءة) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q66" value="0"> مفعول لأجله<br>
+  <input type="radio" name="q66" value="1"> مضاف إليه مجرور<br>
+  <input type="radio" name="q66" value="0"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>67. "تمُرُّ الفُرَصُ مر السحاب" - (تمُرُّ) تُعْرَبُ:</strong><br>
+  <input type="radio" name="q67" value="1"> فعل مضارع مرفوع<br>
+  <input type="radio" name="q67" value="0"> فعل ماضٍ مبني<br>
+  <input type="radio" name="q67" value="0"> اسم فاعل<br>
+</div>
+
+<div class="question">
+  <strong>68. (مرَّ السحاب) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q68" value="1"> حال تمثيلية<br>
+  <input type="radio" name="q68" value="0"> بدل منصوب<br>
+  <input type="radio" name="q68" value="0"> مفعول مطلق<br>
+</div>
+
+<div class="question">
+  <strong>69. (الذهب معدن نفيس...) - (معدن) تُعْرَبُ:</strong><br>
+  <input type="radio" name="q69" value="0"> مفعول به<br>
+  <input type="radio" name="q69" value="1"> خبر مرفوع<br>
+  <input type="radio" name="q69" value="0"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>70. (نفيس) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q70" value="0"> اسم إن<br>
+  <input type="radio" name="q70" value="0"> فاعل<br>
+  <input type="radio" name="q70" value="1"> نعت مرفوع لـ"معدن"<br>
+</div>
+
+<div class="question">
+  <strong>71. (يُسْتَعْمَلُ الذَّهَبُ) - مَا نَوْعُ الفِعْلِ "يُسْتَعْمَلُ"؟</strong><br>
+  <input type="radio" name="q71" value="1"> فعل مضارع مبني للمجهول<br>
+  <input type="radio" name="q71" value="0"> اسم مفعول<br>
+  <input type="radio" name="q71" value="0"> مصدر صناعي<br>
+</div>
+
+<div class="question">
+  <strong>72. (الذهب) فِي نَفْسِ الجُمْلَة يُعْرَبُ:</strong><br>
+  <input type="radio" name="q72" value="0"> مفعول به<br>
+  <input type="radio" name="q72" value="1"> نائب فاعل مرفوع<br>
+  <input type="radio" name="q72" value="0"> بدل من "الفضة"<br>
+</div>
+
+<div class="question">
+  <strong>73. (الفضة) فِي "يُسْتَعْمَلُ الذَّهَبُ وَالْفِضَّةُ" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q73" value="0"> بدل مجرور<br>
+  <input type="radio" name="q73" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q73" value="1"> معطوف على نائب الفاعل<br>
+</div>
+
+<div class="question">
+  <strong>74. (التقود) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q74" value="1"> اسم مجرور بعد "في"<br>
+  <input type="radio" name="q74" value="0"> خبر لمبتدأ محذوف<br>
+  <input type="radio" name="q74" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>75. (خير الأمور الوسط) - مَا إِعْرَابُ "خير"؟</strong><br>
+  <input type="radio" name="q75" value="0"> فاعل<br>
+  <input type="radio" name="q75" value="0"> بدل<br>
+  <input type="radio" name="q75" value="1"> مبتدأ مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>76. (الوسط) تُعْرَبُ:</strong><br>
+  <input type="radio" name="q76" value="1"> خبر مرفوع<br>
+  <input type="radio" name="q76" value="0"> مفعول به أول<br>
+  <input type="radio" name="q76" value="0"> اسم إن<br>
+</div>
+
+<div class="question">
+  <strong>77. (البلاغة حذف الفضول) - مَا مَوْقِع "البلاغة"؟</strong><br>
+  <input type="radio" name="q77" value="1"> مبتدأ مرفوع<br>
+  <input type="radio" name="q77" value="0"> مفعول به<br>
+  <input type="radio" name="q77" value="0"> اسم مجرور<br>
+</div>
+
+<div class="question">
+  <strong>78. (حذف الفضول) فِي الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q78" value="0"> بدل من البلاغة<br>
+  <input type="radio" name="q78" value="1"> خبر مرفوع<br>
+  <input type="radio" name="q78" value="0"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>79. (تقريب البعيد) - مَا إِعْرَابُ "البعيد"؟</strong><br>
+  <input type="radio" name="q79" value="0"> بدل<br>
+  <input type="radio" name="q79" value="1"> مضاف إليه مجرور<br>
+  <input type="radio" name="q79" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>80. (لا يزال الجاهلي لاهيا) - مَا نَوْعُ "لا"؟</strong><br>
+  <input type="radio" name="q80" value="0"> نافية للجنس<br>
+  <input type="radio" name="q80" value="0"> ناهية<br>
+  <input type="radio" name="q80" value="1"> نافية تعمل عمل "ليس"<br>
+</div>
+
+<div class="question">
+  <strong>81. (يبيت قلبه خاليا) - مَا إِعْرَابُ "قلبه"؟</strong><br>
+  <input type="radio" name="q81" value="1"> اسم يبيت مرفوع<br>
+  <input type="radio" name="q81" value="0"> مفعول به أول<br>
+  <input type="radio" name="q81" value="0"> بدل من "الجاهلي"<br>
+</div>
+
+<div class="question">
+  <strong>82. (خاليا) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q82" value="0"> بدل مجرور<br>
+  <input type="radio" name="q82" value="0"> مفعول فيه<br>
+  <input type="radio" name="q82" value="1"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>83. (ويُصْبِح طَرْفُهُ سَاهِياً) - "ساهياً" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q83" value="0"> بدل<br>
+  <input type="radio" name="q83" value="1"> خبر يصبح منصوب<br>
+  <input type="radio" name="q83" value="0"> نعت للفظ الجلالة<br>
+</div>
+
+<div class="question">
+  <strong>84. (الأَسْمَاء مُعْرَبَة إِلَّا الضَّمَائِر) - "الأسماء" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q84" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q84" value="1"> مبتدأ مرفوع<br>
+  <input type="radio" name="q84" value="0"> حال<br>
+</div>
+
+<div class="question">
+  <strong>85. (الضمائر) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q85" value="0"> مضاف إليه<br>
+  <input type="radio" name="q85" value="1"> مستثنى منصوب بإلا<br>
+  <input type="radio" name="q85" value="0"> خبر مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>86. (وأسماء الإشارة) - مَا نَوْعُ "الواو"؟</strong><br>
+  <input type="radio" name="q86" value="1"> عاطفة<br>
+  <input type="radio" name="q86" value="0"> استئنافية<br>
+  <input type="radio" name="q86" value="0"> حالية<br>
+</div>
+
+<div class="question">
+  <strong>87. (الأسماء الموصولة) - مَا نَوْعُ التَّركِيب؟</strong><br>
+  <input type="radio" name="q87" value="1"> تركيب وصفي<br>
+  <input type="radio" name="q87" value="0"> تركيب إضافي<br>
+  <input type="radio" name="q87" value="0"> تركيب بدلي<br>
+</div>
+
+<div class="question">
+  <strong>88. (ألْفَاظًا قَلِيلَة) - "قليلة" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q88" value="0"> بدل منصوب<br>
+  <input type="radio" name="q88" value="1"> نعت منصوب<br>
+  <input type="radio" name="q88" value="0"> خبر مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>89. (يكون الزئبق سائلاً) - "سائلاً" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q89" value="0"> مفعول به<br>
+  <input type="radio" name="q89" value="0"> مبتدأ مؤخر<br>
+  <input type="radio" name="q89" value="1"> خبر يكون منصوب<br>
+</div>
+
+<div class="question">
+  <strong>90. (درجة الحرارة المعتادة) - "المعتادة" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q90" value="1"> نعت مجرور<br>
+  <input type="radio" name="q90" value="0"> حال منصوب<br>
+  <input type="radio" name="q90" value="0"> بدل مجرور<br>
+</div>
+
+<div class="question">
+  <strong>91. (الزنبق) فِي جُمْلَة: "يُسْتَعْمَل الزُّنْبَق فِي عَمَل الْمِرْأَة" يُعْرَبُ:</strong><br>
+  <input type="radio" name="q91" value="1"> نائب فاعل مرفوع<br>
+  <input type="radio" name="q91" value="0"> حال منصوب<br>
+  <input type="radio" name="q91" value="0"> بدل من "المرأة"<br>
+</div>
+
+<div class="question">
+  <strong>92. (في عمل المرأة) - "في" هُنَا تُعْرَبُ:</strong><br>
+  <input type="radio" name="q92" value="0"> حرف عطف<br>
+  <input type="radio" name="q92" value="1"> حرف جر<br>
+  <input type="radio" name="q92" value="0"> أداة شرط<br>
+</div>
+
+<div class="question">
+  <strong>93. (المرء قليل بنفسه كثير بإخوانه) - "بنفسه" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q93" value="0"> نعت<br>
+  <input type="radio" name="q93" value="1"> جار ومجرور متعلق بـ"قليل"<br>
+  <input type="radio" name="q93" value="0"> حال منصوب<br>
+</div>
+
+<div class="question">
+  <strong>94. (الإله) فِي جُمْلَة: "انْفَرَد الإِله بالكمال" يُعْرَبُ:</strong><br>
+  <input type="radio" name="q94" value="0"> مفعول به أول<br>
+  <input type="radio" name="q94" value="0"> بدل من "الكمال"<br>
+  <input type="radio" name="q94" value="1"> فاعل مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>95. (بالكمال) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q95" value="1"> جار ومجرور متعلق بالفعل<br>
+  <input type="radio" name="q95" value="0"> حال منصوب<br>
+  <input type="radio" name="q95" value="0"> نعت مجرور<br>
+</div>
+
+<div class="question">
+  <strong>96. (البلاغة حذف الفضول) - "حذف" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q96" value="0"> بدل<br>
+  <input type="radio" name="q96" value="1"> بدل اشتمال<br>
+  <input type="radio" name="q96" value="0"> خبر مرفوع<br>
+</div>
+
+<div class="question">
+  <strong>97. (تقريب البعيد) - "البعيد" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q97" value="0"> حال<br>
+  <input type="radio" name="q97" value="0"> مفعول مطلق<br>
+  <input type="radio" name="q97" value="1"> مفعول به أول<br>
+</div>
+
+<div class="question">
+  <strong>98. (لا يزال الجاهلي لاهيا) - "لا يزال" تُعْرَبُ:</strong><br>
+  <input type="radio" name="q98" value="1"> فعل ناسخ ناقص<br>
+  <input type="radio" name="q98" value="0"> فعل أمر<br>
+  <input type="radio" name="q98" value="0"> أداة شرط<br>
+</div>
+
+<div class="question">
+  <strong>99. (الجاهلي) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q99" value="0"> بدل من "قلبه"<br>
+  <input type="radio" name="q99" value="1"> اسم "لا يزال" مرفوع<br>
+  <input type="radio" name="q99" value="0"> نعت مجرور<br>
+</div>
+
+<div class="question">
+  <strong>100. (لاهيا) فِي نَفْسِ الجُمْلَة تُعْرَبُ:</strong><br>
+  <input type="radio" name="q100" value="0"> خبر كان<br>
+  <input type="radio" name="q100" value="1"> خبر "لا يزال" منصوب<br>
+  <input type="radio" name="q100" value="0"> اسم فاعل بدل<br>
+</div>
+
+<div style="text-align: center;">
+  <button class="check-btn" onclick="checkAnswers()">📊 اعْرِفْ نَتِيجَتَكَ</button>
+  <button class="back-btn" onclick="history.back()">🔙 عودة</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkAnswers() {
+    let score = 0;
+    for (let i = 1; i <= 100; i++) {
+      const selected = document.querySelector('input[name="q' + i + '"]:checked');
+      if (selected && selected.value === "1") score++;
+    }
+    document.getElementById("result").innerText = "✅ نتيجتك: " + score + " من 100";
+  }
+</script>
+</body>
+</html>
